@@ -1,1 +1,479 @@
-this style  file 
+/* Color Palette */
+:root {
+  --primary: #3498db;
+  --primary-dark: #2980b9;
+  --secondary: #2ecc71;
+  --secondary-dark: #27ae60;
+  --accent: #e74c3c;
+  --accent-light: #e67e22;
+  --background: #f9f9f9;
+  --card-bg: #ffffff;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --success: #2ecc71;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --info: #3498db;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header Styles */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 1.2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  display: inline-block;
+  margin-right: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #fff, #f1f1f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+  display: inline-block;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 1.2rem;
+}
+
+nav ul li a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.auth-buttons {
+  float: right;
+  margin-top: 0.3rem;
+}
+
+.auth-buttons button {
+  padding: 0.6rem 1.4rem;
+  margin-left: 0.8rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#login-btn {
+  background-color: white;
+  color: var(--primary);
+}
+
+#login-btn:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-2px);
+}
+
+#register-btn {
+  background-color: var(--secondary);
+  color: white;
+}
+
+#register-btn:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-2px);
+}
+
+/* Page Styles */
+.page {
+  display: none;
+  padding: 2.5rem 0;
+  animation: fadeIn 0.5s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Feature Cards */
+.features {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 30%;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--primary);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.feature-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.feature-card:nth-child(2) {
+  border-top-color: var(--secondary);
+}
+
+.feature-card:nth-child(2) h3 {
+  color: var(--secondary);
+}
+
+.feature-card:nth-child(3) {
+  border-top-color: var(--accent-light);
+}
+
+.feature-card:nth-child(3) h3 {
+  color: var(--accent-light);
+}
+
+/* Tab System */
+.patient-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+  padding: 0.8rem 1.8rem;
+  background: #eee;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+  color: white;
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.4);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--danger), #c0392b);
+  color: white;
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* Card Styles */
+.appointment-card,
+.prescription-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary);
+}
+
+.appointment-card:hover,
+.prescription-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.appointment-card h4,
+.prescription-card h4 {
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.status-confirmed {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.status-pending {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+.status-rejected {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.4s ease;
+  border-top: 5px solid var(--primary);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+  color: var(--primary);
+}
+
+.close-btn {
+  float: right;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  color: var(--danger);
+  transform: rotate(90deg);
+}
+
+/* Footer Styles */
+footer {
+  background: linear-gradient(135deg, var(--text-dark), #1a252f);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+footer p {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .features {
+    flex-direction: column;
+  }
+  
+  .feature-card {
+    width: 100%;
+  }
+  
+  nav ul li {
+    margin-right: 0.5rem;
+  }
+  
+  nav ul li a {
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  nav ul {
+    display: block;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .auth-buttons {
+    float: none;
+    margin-top: 1rem;
+  }
+  
+  .patient-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    width: 95%;
+  }
+  
+  .feature-card {
+    width: 100%;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  nav ul li a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+  
+  .auth-buttons button {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+}
