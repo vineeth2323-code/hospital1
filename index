@@ -1,1 +1,95 @@
-this is index file
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Hospital System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>E-Hospital System</h1>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#" class="active" data-page="home">Home</a></li>
+                    <li><a href="#" data-page="patient">Patient Portal</a></li>
+                    <li><a href="#" data-page="doctor">Doctor Portal</a></li>
+                    <li><a href="#" data-page="lab">Lab Portal</a></li>
+                    <li><a href="#" data-page="pharmacy">Pharmacy</a></li>
+                    <li><a href="#" data-page="billing">Billing</a></li>
+                    <li><a href="#" data-page="reports">Reports</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button id="login-btn">Login</button>
+                <button id="register-btn">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <h2>Welcome to E-Hospital System</h2>
+            <p>Comprehensive healthcare management solution</p>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Book Appointments</h3>
+                    <p>Easy online appointment scheduling</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Digital Prescriptions</h3>
+                    <p>Access your prescriptions anytime</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Lab Results</h3>
+                    <p>View your test results online</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patient Portal -->
+        <section id="patient-page" class="page">
+            <h2>Patient Portal</h2>
+            <div class="patient-tabs">
+                <button class="tab-btn active" data-tab="book-appointment">Book Appointment</button>
+                <button class="tab-btn" data-tab="view-appointments">My Appointments</button>
+                <button class="tab-btn" data-tab="prescriptions">Prescriptions</button>
+            </div>
+            
+            <div id="book-appointment" class="tab-content active">
+                <!-- Appointment booking form -->
+            </div>
+            
+            <div id="view-appointments" class="tab-content">
+                <!-- Appointments list -->
+            </div>
+            
+            <div id="prescriptions" class="tab-content">
+                <!-- Prescriptions list -->
+            </div>
+        </section>
+
+        <!-- Other portal sections similarly structured -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 E-Hospital System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <!-- Login form -->
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/patient.js"></script>
+    <script src="js/doctor.js"></script>
+    <script src="js/lab.js"></script>
+    <script src="js/pharmacy.js"></script>
+    <script src="js/billing.js"></script>
+</body>
+</html>
